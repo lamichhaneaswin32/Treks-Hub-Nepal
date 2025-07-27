@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Everest Base Camp Trek - Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+   <section class="slider">
+    <div class="slides">
+      <img src="everest1.jpeg" class="slide active" alt="everest View 1">
+      <img src="everest2.jpeg" class="slide" alt="everest View 2">
+      <img src="everest3.jpeg" class="slide" alt="everest View 3">
+    </div>
+  </section>
+
+        <h1>Everest Base Camp Trek</h1>
+    </header>
+
+    <section class="overview">
+        <div class="details">
+            <h2>Overview</h2>
+            <p>Join us for a 14-day trek to the base of the world’s highest peak. Experience Sherpa culture, panoramic Himalayan views, and high-altitude adventure.</p>
+            <ul>
+                <li><strong>Duration:</strong> 14 Days</li>
+                <li><strong>Difficulty:</strong> Challenging</li>
+                <li><strong>Max Altitude:</strong> 5,364m</li>
+                <li><strong>Group Size:</strong> 2–12 trekkers</li>
+                <li><strong>Cost:</strong> $1,299</li>
+            </ul>
+        </div>
+
+        <div class="map">
+            <h2>Route Map</h2>
+            <iframe src="everest.jpg" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <section class="itinerary">
+        <h2>Itinerary</h2>
+        <ol>
+            <li>Day 1: Fly to Lukla, trek to Phakding</li>
+            <li>Day 2: Trek to Namche Bazaar</li>
+            <li>Day 3: Acclimatization in Namche</li>
+            <li>Day 4–6: Trek through Tengboche to Dingboche</li>
+            <li>Day 7–9: Reach Lobuche, Everest Base Camp</li>
+            <li>Day 10–13: Descend to Lukla</li>
+            <li>Day 14: Fly back to Kathmandu</li>
+        </ol>
+    </section>
+
+    <section class="booking-form">
+        <h2>Book Your Trek</h2>
+        <form id="trekBookingForm">
+            <label for="fullName">Full Name*</label>
+            <input type="text" id="fullName" required />
+
+            <label for="email">Email*</label>
+            <input type="email" id="email" required />
+
+            <label for="date">Preferred Start Date*</label>
+            <input type="date" id="date" required />
+
+            <label for="groupSize">Group Size*</label>
+            <input type="number" id="groupSize" min="1" required />
+
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" rows="4"></textarea>
+
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </section>
+
+</body>
+</html>

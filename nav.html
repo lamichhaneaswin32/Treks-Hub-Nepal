@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="stylen.css">
+</head>
+<body>
+     <header>
+    <div class="logo-section">
+      <img src="logo.png" alt="Logo" />
+      <span>Trek Hub Nepal</span>
+    </div>
+    <nav>
+      <a href="Home" class="active">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="Destinations.html">Destinations</a>
+      <a href="Equipment.html">Equipment</a>
+      <a href="Guides.html">Guides</a>
+      <!-- <a href="#">Reviews</a> -->
+    </nav>
+    <button class="book-btn">Book Now</button>
+     <div class="overlay" id="overlay" onclick="closeForm()"></div>
+
+  <div class="popup" id="popupForm">
+    <span class="close-btn" onclick="closeForm()">×</span>
+    <h2>Book Your Adventure</h2>
+    <form id="bookingForm">
+      <label>Full Name *</label>
+      <input type="text" name="fullName" required />
+
+      <label>Email Address *</label>
+      <input type="email" name="email" required />
+
+      <label>Phone Number *</label>
+      <input type="tel" name="phone" required />
+
+      <label>Trek Package *</label>
+      <select name="package" required>
+        <option value="">--Select a trek--</option>
+        <option value="everest">Everest Base Camp</option>
+        <option value="annapurna">Annapurna Circuit</option>
+      </select>
+
+      <label>Preferred Start Date *</label>
+      <input type="date" name="date" required />
+
+      <label>Group Size *</label>
+      <select name="groupSize" required>
+        <option>1</option>
+        <option>2</option>
+        <option>3–5</option>
+        <option>6+</option>
+      </select>
+
+      <label>Trekking Experience</label>
+      <select name="experience">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="expert">Expert</option>
+      </select>
+
+      <label>Special Requests</label>
+      <textarea name="requests" placeholder="Dietary preferences, medical needs, etc."></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </header>
+  <script src="scriptn.js"></script>
+    
+</body>
+</html>

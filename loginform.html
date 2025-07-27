@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trek Hub Nepal</title>
+  <link rel="stylesheet" href="loginstyle.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="tab-toggle">
+      <button id="showLogin">Login</button>
+      <button id="showSignup" class="active">Sign Up</button>
+    </div>
+
+    <!-- Login Section -->
+    <div id="loginSection" class="form-box hidden">
+      <h2>Welcome Back</h2>
+      <p>Continue your trekking journey</p>
+      <form id="loginForm">
+        <input id="loginEmail" type="email" placeholder="Email" required />
+        <input id="loginPassword" type="password" placeholder="Password" required />
+        <button type="submit">Login to Dashboard</button>
+        <a href="#">Forgot your password?</a>
+      </form>
+    </div>
+
+    <!-- Sign-Up Section -->
+    <div id="signupSection" class="form-box">
+      <h2>Join the Adventure</h2>
+      <p>Create your account and start exploring Nepal’s majestic trails.</p>
+      <form id="signupForm">
+        <input id="firstName" type="text" placeholder="First Name" required />
+        <input id="lastName" type="text" placeholder="Last Name" required />
+        <input id="signupEmail" type="email" placeholder="Email Address" required />
+        <input id="phone" type="tel" placeholder="Phone Number (+977...)" required />
+        <input id="location" type="text" placeholder="Location (Your city, country)" required />
+
+        <select id="experience" required>
+          <option disabled selected>Trekking Experience</option>
+          <option>Beginner (0–2 treks)</option>
+          <option>Intermediate (3–5 treks)</option>
+          <option>Experienced (6+ treks)</option>
+        </select>
+
+        <input id="signupPassword" type="password" placeholder="Create a strong password" required />
+        <input id="confirmPassword" type="password" placeholder="Confirm your password" required />
+
+        <button type="submit">Sign Up & Start Trekking</button>
+
+        <p class="disclaimer">
+          By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="loginscript.js"></script>
+</body>
+</html>

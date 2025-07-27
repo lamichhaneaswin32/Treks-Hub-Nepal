@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manaslu Circuit Trek – Details</title>
+  <link rel="stylesheet" href="stylem.css" />
+  <script src="scriptm.js" defer></script>
+</head>
+<body>
+
+  <!-- Image Slider -->
+  <section class="slider">
+    <div class="slides">
+      <img src="manaslu1.jpeg" class="slide active" alt="Manaslu View 1">
+      <img src="manaslu2.jpeg" class="slide" alt="Manaslu View 2">
+      <img src="manaslu3.jpeg" class="slide" alt="Manaslu View 3">
+    </div>
+  </section>
+  <section class="weather">//
+    //using api to get weather data
+    <h2>Current Weather in Manaslu Region</h2>
+    <div id="weather">
+      <p>Loading weather data...</p>
+    </div>
+  </section>
+
+  <!-- Itinerary -->
+  <section class="itinerary">
+    <h2>Manaslu Circuit Trek – Itinerary</h2>
+    <ul>
+      <li><strong>Day 1:</strong> Drive from Kathmandu to Soti Khola</li>
+      <li><strong>Day 2:</strong> Trek to Machha Khola</li>
+      <li><strong>Day 3:</strong> Trek to Jagat</li>
+      <li><strong>Day 4:</strong> Trek to Deng</li>
+      <li><strong>Day 5:</strong> Trek to Namrung</li>
+      <li><strong>Day 6:</strong> Trek to Samagaon</li>
+      <li><strong>Day 7:</strong> Acclimatization at Samagaon</li>
+      <li><strong>Day 8:</strong> Trek to Samdo</li>
+      <li><strong>Day 9:</strong> Trek to Dharamsala</li>
+      <li><strong>Day 10:</strong> Cross Larkya La Pass to Bimthang</li>
+      <li><strong>Day 11:</strong> Trek to Tilije</li>
+      <li><strong>Day 12:</strong> Trek to Dharapani</li>
+      <li><strong>Day 13:</strong> Drive to Besisahar</li>
+      <li><strong>Day 14:</strong> Drive back to Kathmandu</li>
+    </ul>
+  </section>
+
+  <!-- Map -->
+  <section class="map">
+    <h2>Route Map</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.1378612282754!2d85.31878571454019!3d27.70895598279414!2m3!1f0!2f0!3f0"
+      width="100%"
+      height="400"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- Booking Card -->
+  <section class="booking">
+    <div class="card">
+      <h3>Price from: <span class="price">$999 P/P</span></h3>
+
+      <p>Departure Date:</p>
+      <input type="date" id="departure-date" required />
+
+      <p>Travelers:</p>
+      <div class="traveler-count">
+        <button id="minus">−</button>
+        <input type="number" id="count" value="1" readonly />
+        <button id="plus">+</button>
+      </div>
+
+      <p>Total Price: <span id="total">$999</span></p>
+
+      <button class="book-btn">confirm booking</button>
+    </div>
+  </section>
+
+</body>
+</html>

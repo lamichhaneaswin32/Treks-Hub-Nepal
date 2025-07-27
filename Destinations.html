@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styled.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="stylen.css">
+    <link rel="stylesheet" href="stylef.css">
+</head>
+<body>
+     <header>
+    <div class="logo-section">
+     <a href="main.html"><img src="logo.png" alt="Logo" /></a>
+     <!-- <a href="main.html">Trek Hub Nepal</a> -->
+    </div>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="Destinations.html" class="active">Destinations</a>
+      <a href="Equipment.html">Equipment</a>
+      <a href="Guides.html">Guides</a>
+      <!-- <a href="#">Reviews</a> -->
+    </nav>
+    <a href="loginform.html"><button class="book-btn">Login/Signup</button></a>
+     <div class="overlay" id="overlay" onclick="closeForm()"></div>
+
+  <div class="popup" id="popupForm">
+    <span class="close-btn" onclick="closeForm()">×</span>
+    <h2>Book Your Adventure</h2>
+    <form id="bookingForm">
+      <label>Full Name *</label>
+      <input type="text" name="fullName" required />
+
+      <label>Email Address *</label>
+      <input type="email" name="email" required />
+
+      <label>Phone Number *</label>
+      <input type="tel" name="phone" required />
+
+      <label>Trek Package *</label>
+      <select name="package" required>
+        <option value="">--Select a trek--</option>
+        <option value="everest">Everest Base Camp</option>
+        <option value="annapurna">Annapurna Circuit</option>
+      </select>
+
+      <label>Preferred Start Date *</label>
+      <input type="date" name="date" required />
+
+      <label>Group Size *</label>
+      <select name="groupSize" required>
+        <option>1</option>
+        <option>2</option>
+        <option>3–5</option>
+        <option>6+</option>
+      </select>
+
+      <label>Trekking Experience</label>
+      <select name="experience">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="expert">Expert</option>
+      </select>
+
+      <label>Special Requests</label>
+      <textarea name="requests" placeholder="Dietary preferences, medical needs, etc."></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </header>
+  
+    <!-- <section class="hero">
+    <h1>Trek Destinations</h1>
+    <p>Discover the most spectacular trekking regions in Nepal</p>
+  </section> -->
+ <!-- ========== BANNER SECTION ========== -->
+<section class="banner" id="banner">
+  <h1>
+    Discover Nepal's <br><span class="highlight">Hidden Treasures</span>
+  </h1>
+  <p>
+    From legendary peaks to sacred valleys, each destination tells a story<br>
+    of adventure, culture, and natural wonder that will transform your <br> 
+    perspective forever.
+  </p>
+  <div class="btns">
+    <button id="planBtn" class="btn plan-btn">Plan My Adventure</button>
+    
+    <button id="tourBtn" class="btn tour-btn" onclick="videopen()">Virtual Tours</button>
+  </div>
+</section>
+
+<!-- Virtual Tour Modal (can sit just after the banner) \ -->
+  <div class="modal" id="tourModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Virtual Tour</h2>
+      <p>Experience Nepal’s wonders from wherever you are.</p>
+
+      <!-- HTML5 Video Element -->
+      <video id="tourVideo" controls>
+        <source src="video1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+
+ 
+  <section class="stats">
+    <div class="stat"><h2>14</h2><p>Regions</p></div>
+    <div class="stat"><h2>8,848m</h2><p>Highest Peak</p></div>
+    <div class="stat"><h2>300+</h2><p>Trails</p></div>
+    <div class="stat"><h2>4.8★</h2><p>Avg Rating</p></div>
+  </section>
+  <div class="container">
+    <h1>Popular Trekking Regions</h1>
+    <p>Each region offers unique landscapes and experiences</p>
+
+     
+    <div class="region-tabs">
+      <button class="tab active" onclick="switchRegion('everest')">Everest Region</button>
+      <button class="tab" onclick="switchRegion('annapurna')">Annapurna Region</button>
+      <button class="tab" onclick="switchRegion('langtang')">Langtang Region</button>
+      <button class="tab" onclick="switchRegion('manaslu')">Manaslu Region</button>
+    </div>
+
+  
+    <div class="region-content" id="everest">
+      <img src="everest.jpg" alt="Everest Region" />
+      <div class="details">
+        <h2>Everest Region</h2>
+        <p>🏔️ Home to the world's highest peak</p>
+        <p><strong>Best Season:</strong> Oct–Nov, Mar–May</p>
+        <p><strong>Max Altitude:</strong> 5,364m</p>
+        <p><strong>Duration:</strong> 12–16 days</p>
+        <p><strong>Difficulty:</strong> Challenging</p>
+        <div class="highlight-box">
+          <h3>Highlights:</h3>
+          <ul>
+            <li>⭐ Everest Base Camp</li>
+            <li>⭐ Kala Patthar</li>
+            <li>⭐ Sherpa Culture</li>
+            <li>⭐ Sagarmatha National Park</li>
+          </ul>
+          <a href="#" class="explore-btn">Explore Everest Region</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="region-content" id="annapurna" style="display: none;">
+      <img src="Annapurnaa.jpg" alt="Annapurna Region" />
+      <div class="details">
+        <h2>Annapurna Region</h2>
+        <p>🌄 Known for circuit trekking and cultural diversity</p>
+        <p><strong>Best Season:</strong> Sep–Nov, Mar–Apr</p>
+        <p><strong>Max Altitude:</strong> 5,416m</p>
+        <p><strong>Duration:</strong> 10–14 days</p>
+        <p><strong>Difficulty:</strong> Moderate</p>
+        <div class="highlight-box">
+          <h3>Highlights:</h3>
+          <ul>
+            <li>⭐ Annapurna Circuit</li>
+            <li>⭐ Tilicho Lake</li>
+            <li>⭐ Poon Hill Viewpoint</li>
+            <li>⭐ Gurung Villages</li>
+          </ul>
+          <a href="#" class="explore-btn">Explore Annapurna Region</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="region-content" id="langtang" style="display: none;">
+      <img src="laangtang.jpg" alt="Langtang Region" />
+      <div class="details">
+        <h2>Langtang Region</h2>
+        <p>⛰️ Lush valleys and close mountain views</p>
+        <p><strong>Best Season:</strong> Mar–May, Oct–Nov</p>
+        <p><strong>Max Altitude:</strong> 4,984m</p>
+        <p><strong>Duration:</strong> 7–10 days</p>
+        <p><strong>Difficulty:</strong> Moderate</p>
+        <div class="highlight-box">
+          <h3>Highlights:</h3>
+          <ul>
+            <li>⭐ Langtang Valley</li>
+            <li>⭐ Kyanjin Gompa</li>
+            <li>⭐ Langtang Lirung Glacier</li>
+            <li>⭐ Tibetan Heritage</li>
+          </ul>
+          <a href="#" class="explore-btn">Explore Langtang Region</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="region-content" id="manaslu" style="display: none;">
+      <img src="manasalu.jpg" alt="Manaslu Region" />
+      <div class="details">
+        <h2>Manaslu Region</h2>
+        <p>🧭 Remote and adventurous circuit trekking</p>
+        <p><strong>Best Season:</strong> Sep–Nov</p>
+        <p><strong>Max Altitude:</strong> 5,160m</p>
+        <p><strong>Duration:</strong> 14–18 days</p>
+        <p><strong>Difficulty:</strong> Challenging</p>
+        <div class="highlight-box">
+          <h3>Highlights:</h3>
+          <ul>
+            <li>⭐ Manaslu Base Camp</li>
+            <li>⭐ Larkya La Pass</li>
+            <li>⭐ Nubri Villages</li>
+            <li>⭐ Buddhist Monasteries</li>
+          </ul>
+          <a href="#" class="explore-btn">Explore Manaslu Region</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  
+
+  <section class="season-block">
+    <h2>Best Trekking Seasons</h2>
+    <div class="seasons">
+      <div class="season">
+        <h3>Spring (Mar–May)</h3>
+        <ul>
+          <li>Clear mountain views</li>
+          <li>Blooming rhododendrons</li>
+          <li>Moderate temperatures</li>
+        </ul>
+      </div>
+      <div class="season">
+        <h3>Autumn (Sep–Nov)</h3>
+        <ul>
+          <li>Stable weather</li>
+          <li>Crystal clear skies</li>
+          <li>Perfect visibility</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2>Trek Hub Nepal</h2>
+        <p>Your trusted partner for authentic Himalayan adventures.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Trek Packages</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-treks">
+        <h3>Popular Treks</h3>
+        <ul>
+          <li><a href="#">Everest Base Camp</a></li>
+          <li><a href="#">Annapurna Circuit</a></li>
+          <li><a href="#">Langtang Valley</a></li>
+          <li><a href="#">Manaslu Circuit</a></li>
+          <li><a href="#">Gokyo Lakes</a></li>
+          <li><a href="#">Upper Mustang</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Info</h3>
+        <p>Thamel, Kathmandu<br>Nepal 44600</p>
+        <p>Phone: +977-1-4411234</p>
+        <p>Email: info@trekhubnepal.com</p>
+      </div>
+    </div>
+
+    <div class="footer-updates">
+      <h3>Stay Updated</h3>
+      <p>Subscribe to our newsletter for trekking tips and special offers.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Your Email" id="update-email" />
+        <button onclick="subscribeUpdate()">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Trek Hub Nepal — All rights reserved</p>
+    </div>
+  </footer>
+  <script src="scriptn.js"></script>
+  <script src="scriptd.js"></script>
+
+
+<script>
+ function switchRegion(regionId) {
+  const contents = document.querySelectorAll('.region-content');
+  const tabs = document.querySelectorAll('.tab');
+
+  contents.forEach(c => c.style.display = 'none');
+  tabs.forEach(t => t.classList.remove('active'));
+
+  document.getElementById(regionId).style.display = 'block';
+  document.querySelector(`.tab[onclick="switchRegion('${regionId}')"]`).classList.add('active');
+}
+
+// Load Everest by default on page load
+document.addEventListener('DOMContentLoaded', () => {
+  switchRegion('everest');
+});
+``
+</script>
+
+
+
+
+</body>
+</html>

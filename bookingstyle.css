@@ -1,0 +1,151 @@
+/* ---------------- Overlay Backdrop ---------------- */
+.overlay {
+  position: fixed;
+  inset: 0;               /* top:0; right:0; bottom:0; left:0 */
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --------------- Popup Container ----------------- */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  padding: 32px 24px;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 1, 0.3, 1),
+    opacity 0.35s ease;
+  z-index: 1001;
+}
+
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* -------------- Keyframe Animations -------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes popIn {
+  from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+  to   { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+}
+
+/* -------------- Popup Header & Close -------------- */
+.popup h2 {
+  margin: 0 0 24px;
+  font-size: 1.6rem;
+  color: #2b6cb0;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.4rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.close-btn:hover {
+  color: #444;
+}
+
+/* ---------------- Form Elements ------------------ */
+.popup form label {
+  display: block;
+  margin: 16px 0 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.popup form input[type="text"],
+.popup form input[type="email"],
+.popup form input[type="tel"],
+.popup form input[type="date"],
+.popup form select,
+.popup form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popup form input:focus,
+.popup form select:focus,
+.popup form textarea:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+}
+
+/* Textarea auto-height hint */
+.popup form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ---------------- Submit Button ------------------ */
+.popup form button[type="submit"] {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px 0;
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.popup form button[type="submit"]:hover {
+  background: #22a85b;
+  transform: translateY(-2px);
+}
+
+/* --------------- Responsive Tweaks --------------- */
+@media (max-width: 480px) {
+  .popup {
+    padding: 24px 16px;
+  }
+  .popup h2 {
+    font-size: 1.4rem;
+  }
+  .popup form label {
+    margin: 12px 0 4px;
+  }
+  .popup form input,
+  .popup form select,
+  .popup form textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  .popup form button[type="submit"] {
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+}

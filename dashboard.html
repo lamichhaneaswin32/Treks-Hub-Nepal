@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trek Hub Nepal – Dashboard</title>
+  <link rel="stylesheet" href="dashboardstyle.css">
+  <link rel="stylesheet" href="stylen.css">
+  <link rel="stylesheet" href="stylef.css">
+  <link rel="stylesheet" href="stylepop.css">
+  <link rel="stylesheet" href="styleslider.css">
+   <link rel="stylesheet" href="stylebook.css">
+
+</head>
+<body>
+    <header>
+    <div class="logo-section">
+      <a href="main.html"><img src="logo.png" alt="Logo" /></a>
+     <!-- <a href="main.html">Trek Hub Nepal</a> -->
+    </div>
+    <nav>
+      <a href="main.html" >Home</a>
+      <a href="Services.html">Services</a>
+      <a href="Destinations.html">Destinations</a>
+      <a href="Equipment.html">Equipment</a>
+      <a href="Guides.html">Guides</a>
+    
+      <!-- <a href="#">Reviews</a> -->
+    </nav>
+<a href="loginform.html"class="active"><button class="book-btn">Login/Signup</button></a>
+  </header>
+  <div class="wrapper">
+    <header>
+      <h1 id="welcomeMessage">Welcome back!</h1>
+      <button id="logoutBtn">Logout</button>
+    </header>
+
+    <!-- PROFILE -->
+    <div class="profile" id="profile"></div>
+
+    <!-- STATS -->
+     <h1>Adventure Awaits you</h1>
+     
+     <!-- Image Slider Section -->
+<section class="image-slider-section">
+  <div class="image-slider">
+    <div class="slides">
+      <img src="images/trek1.jpg" alt="Trek 1">
+      <img src="images/trek2.jpg" alt="Trek 2">
+      <img src="images/trek3.jpg" alt="Trek 3">
+      <img src="images/trek4.jpg" alt="Trek 4">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="dots">
+      <span class="dot" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+    </div>
+  </div>
+</section>
+<section id ="buttons">
+ <button id="planAdventureBtn">Plan My Adventure</button>
+
+  <div id="popup" class="popup">
+    <!-- Step 1: Difficulty -->
+    <div class="popup-content" id="step1">
+      <span class="close-btn">&times;</span>
+      <h2>Your Perfect Trek Awaits</h2>
+      <p>What's your adventure level?</p>
+      <div class="options">
+        <div class="option" data-difficulty="Easy">Easy<br><small>5–10 days</small></div>
+        <div class="option" data-difficulty="Moderate">Moderate<br><small>8–14 days</small></div>
+        <div class="option" data-difficulty="Challenging">Challenging<br><small>12–21 days</small></div>
+        <div class="option" data-difficulty="Extreme">Extreme<br><small>15–30 days</small></div>
+      </div>
+    </div>
+
+    <!-- Step 2: Duration -->
+    <div class="popup-content" id="step2">
+      <span class="close-btn">&times;</span>
+      <h2>How much time do you have?</h2>
+      <p>Select your trek duration</p>
+      <div class="options">
+        <div class="option" data-duration="1–7 days">1–7 days<br><small>Weekend adventures</small></div>
+        <div class="option" data-duration="8–14 days">8–14 days<br><small>Classic treks</small></div>
+        <div class="option" data-duration="15–21 days">15–21 days<br><small>Epic journeys</small></div>
+        <div class="option" data-duration="22+ days">22+ days<br><small>Ultimate challenges</small></div>
+      </div>
+      <p class="back-link" id="backToStep1">&larr; Back to difficulty</p>
+    </div>
+
+    <!-- Step 3: Recommendations -->
+    <div class="popup-content" id="step3">
+      <span class="close-btn">&times;</span>
+      <h2>Top Picks for You</h2>
+      <div id="recList" class="rec-list"></div>
+      <div class="change-links">
+        <span id="changeDuration">Change duration</span> |
+        <span id="changeDifficulty">Change difficulty</span>
+      </div>
+    </div>
+  </div>
+<!-- Book Now Button (inside each trek card) -->
+<button class="book-now-btn" data-trek-name="Everest Base Camp">
+  <span class="btn-icon">🗻</span>
+  <span class="btn-text">Book Now</span>
+</button>
+
+<!-- Booking Modal (once per page) -->
+ <div class="iframe-wrapper" style="margin-top:1.5rem;">
+      <h4>Ready to Book?</h4>
+      <iframe 
+        src="booking-form.html" 
+        width="100%" 
+        height="400" 
+        style="border: 1px solid #ccc; border-radius: 10px; background:#fff;" 
+        scrolling="yes"
+        allowtransparency="true"
+      ></iframe>
+    </div>
+<div id="bookingModal" class="modal hidden">
+  <div class="modal-backdrop"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h2>Book Your Adventure</h2>
+      <p>You’re booking: <strong id="modalTrekName"></strong></p>
+    </div>
+    <form id="bookingForm" class="modal-form">
+      <div class="field">
+        <label for="bookName">Full Name</label>
+        <input type="text" id="bookName" required />
+      </div>
+      <div class="field">
+        <label for="bookEmail">Email</label>
+        <input type="email" id="bookEmail" required />
+      </div>
+      <div class="field">
+        <label for="bookPhone">Phone</label>
+        <input type="tel" id="bookPhone" placeholder="+977XXXXXXXXXX" required />
+      </div>
+      <div class="field">
+        <label for="bookDate">Preferred Date</label>
+        <input type="date" id="bookDate" required />
+      </div>
+      <div class="field">
+        <label for="bookGroup">Group Size</label>
+        <input type="number" id="bookGroup" min="1" value="1" required />
+      </div>
+      <div class="field">
+        <label for="bookNotes">Notes</label>
+        <textarea id="bookNotes" rows="3" placeholder="Any special requests"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Confirm Booking</button>
+    </form>
+    <div id="bookingSuccess" class="success-message hidden">
+      🎉 Your booking has been received!  
+      <small>Check your dashboard for details.</small>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+    <h2>Your Past</h2>
+    <section class="dashboard-stats">
+      <div class="stat">
+        <p>Total Treks</p>
+        <h2 id="statTreks">0</h2>
+      </div>
+      <div class="stat">
+        <p>Total Distance</p>
+        <h2 id="statDistance">0 km</h2>
+      </div>
+      <div class="stat">
+        <p>Highest Peak</p>
+        <h2 id="statPeak">0 m</h2>
+      </div>
+      <div class="stat">
+        <p>Days Trekking</p>
+        <h2 id="statDays">0</h2>
+      </div>
+      <div class="stat">
+        <p>Countries Visited</p>
+        <h2 id="statCountries">0</h2>
+      </div>
+      <div class="stat">
+        <p>Guides Met</p>
+        <h2 id="statGuides">0</h2>
+      </div>
+    </section>
+    <!-- //image slider -->
+      <!-- Trigger Button -->
+
+
+
+
+    <!-- FILTERS -->
+    <!-- <div class="filter-controls">
+      <label>Difficulty:
+        <select id="filterDifficulty">
+          <option value="">All</option>
+          <option>Easy</option>
+          <option>Moderate</option>
+          <option>Hard</option>
+        </select>
+      </label>
+      <label>Status:
+        <select id="filterStatus">
+          <option value="">All</option>
+          <option>Confirmed</option>
+          <option>Pending</option>
+        </select>
+      </label>
+      <label>Guide:
+        <input type="text" id="filterGuide" placeholder="Name"/>
+      </label>
+      <label>Date from:
+        <input type="date" id="filterDateFrom"/>
+      </label>
+      <label>Date to:
+        <input type="date" id="filterDateTo"/>
+      </label>
+      <button class="clear-btn" id="clearFilters">Clear</button>
+    </div> -->
+
+    <!-- UPCOMING TREKS -->
+    <section class="upcoming-treks">
+      <div class="trek-card"
+           data-date="2024-03-15"
+           data-difficulty="Hard"
+           data-status="Confirmed"
+           data-guide="Pemba Sherpa">
+        <h3>Everest Base Camp</h3>
+        <p>Dates: March 15 – 29, 2024 (14 days)</p>
+        <p class="difficulty">Difficulty: Hard</p>
+        <p>Max Altitude: 5,364 m</p>
+        <p>Guide: Pemba Sherpa • Cost: $2,499</p>
+        <p class="status confirmed">Confirmed</p>
+        <div class="actions">
+          <button>Route</button>
+          <button>Details</button>
+        </div>
+      </div>
+
+      <div class="trek-card"
+           data-date="2024-04-20"
+           data-difficulty="Moderate"
+           data-status="Pending"
+           data-guide="">
+        <h3>Annapurna Circuit</h3>
+        <p>Dates: April 20 – May 2, 2024 (12 days)</p>
+        <p class="difficulty">Difficulty: Moderate</p>
+        <p>Max Altitude: 5,416 m</p>
+        <p>Guide: TBA • Cost: $2,199</p>
+        <p class="status pending">Pending</p>
+        <div class="actions">
+          <button>Route</button>
+          <button>Details</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT UPDATES -->
+    <section class="recent-updates">
+      <h2>Recent Updates</h2>
+      <div class="update-card">
+        <div class="details">
+          Trek Booking Confirmed: Everest Base Camp on March 15, 2024.
+        </div>
+        <button>View</button>
+      </div>
+      <div class="update-card">
+        <div class="details">
+          Weather Alert: Severe conditions expected on Annapurna.
+        </div>
+        <button>Check</button>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2>Trek Hub Nepal</h2>
+        <p>Your trusted partner for authentic Himalayan adventures.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Trek Packages</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-treks">
+        <h3>Popular Treks</h3>
+        <ul>
+          <li><a href="#">Everest Base Camp</a></li>
+          <li><a href="#">Annapurna Circuit</a></li>
+          <li><a href="#">Langtang Valley</a></li>
+          <li><a href="#">Manaslu Circuit</a></li>
+          <li><a href="#">Gokyo Lakes</a></li>
+          <li><a href="#">Upper Mustang</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Info</h3>
+        <p>Thamel, Kathmandu<br>Nepal 44600</p>
+        <p>Phone: +977-1-4411234</p>
+        <p>Email: info@trekhubnepal.com</p>
+      </div>
+    </div>
+
+    <div class="footer-updates">
+      <h3>Stay Updated</h3>
+      <p>Subscribe to our newsletter for trekking tips and special offers.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Your Email" id="update-email" />
+        <button onclick="subscribeUpdate()">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Trek Hub Nepal — All rights reserved</p>
+    </div>
+  </footer>
+  <script src="dashboard.js"></script>
+  <script src="popup.js"></script>
+  <script src="book.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="stylen.css">
+     <linkrel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylef.css">
+    <link rel="stylesheet" href="styleg.css">
+</head>
+<body>
+     <header>
+    <div class="logo-section">
+     <a href="main.html"><img src="logo.png" alt="Logo" /></a>
+     <!-- <a href="main.html">Trek Hub Nepal</a> -->
+    </div>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="Destinations.html">Destinations</a>
+      <a href="Equipment.html">Equipment</a>
+      <a href="Guides.html"class="active">Guides</a>
+      <!-- <a href="#">Reviews</a> -->
+    </nav>
+   <a href="loginform.html"><button class="book-btn">Login/Signup</button></a>
+     <div class="overlay" id="overlay" onclick="closeForm()"></div>
+
+  <div class="popup" id="popupForm">
+    <span class="close-btn" onclick="closeForm()">×</span>
+    <h2>Book Your Adventure</h2>
+    <form id="bookingForm">
+      <label>Full Name *</label>
+      <input type="text" name="fullName" required />
+
+      <label>Email Address *</label>
+      <input type="email" name="email" required />
+
+      <label>Phone Number *</label>
+      <input type="tel" name="phone" required />
+
+      <label>Trek Package *</label>
+      <select name="package" required>
+        <option value="">--Select a trek--</option>
+        <option value="everest">Everest Base Camp</option>
+        <option value="annapurna">Annapurna Circuit</option>
+      </select>
+
+      <label>Preferred Start Date *</label>
+      <input type="date" name="date" required />
+
+      <label>Group Size *</label>
+      <select name="groupSize" required>
+        <option>1</option>
+        <option>2</option>
+        <option>3–5</option>
+        <option>6+</option>
+      </select>
+
+      <label>Trekking Experience</label>
+      <select name="experience">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="expert">Expert</option>
+      </select>
+
+      <label>Special Requests</label>
+      <textarea name="requests" placeholder="Dietary preferences, medical needs, etc."></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </header>
+  <body>
+  <section class="counter-section">
+    <h1>Meet Our <span class="highlight">Expert Guides</span></h1>
+    <p>Discover the Himalayas with our certified mountain guides – each bringing decades of experience and commitment to your safety.</p>
+
+    <div class="counters">
+      <div class="card">
+        <h2><span class="counter" data-target="5">0</span>+</h2>
+        <p>Expert Guides</p>
+      </div>
+      <div class="card">
+        <h2><span class="counter" data-target="65">0</span>+</h2>
+        <p>Years Experience</p>
+      </div>
+      <div class="card">
+        <h2><span class="counter" data-target="1142">0</span>+</h2>
+        <p>Happy Clients</p>
+      </div>
+      <div class="card">
+        <h2><span class="counter" data-target="97">0</span>%</h2>
+        <p>Satisfaction Rate</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- <section class="expert-section">
+    <div class="expert-container">
+      <div class="expert-header">
+        <h1>Meet Our Expert</h1>
+        <p class="expert-subtitle">
+          Experienced, certified, and passionate professionals ready to make your Himalayan adventure unforgettable.
+        </p>
+      </div>
+
+      <div class="expert-stats">
+        <div class="stat-card">
+          <h2>5+</h2>
+          <p>Expert Guides</p>
+        </div>
+        <div class="stat-card">
+          <h2>2000+</h2>
+          <p>Successful Treks</p>
+        </div>
+        <div class="stat-card">
+          <h2>15+</h2>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-card">
+          <h2>4.8★</h2>
+          <p>Average Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+   <div class="container">
+    <header>
+      <h1>Find Your Guide</h1>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search by name, specialty, region, language, availability..."
+      />
+    </header>
+
+    <nav class="filters">
+      <button class="filter-btn active" data-filter="all">All Guides</button>
+      <button class="filter-btn" data-filter="senior">Senior Guides</button>
+      <button class="filter-btn" data-filter="cultural">Cultural Specialists</button>
+      <button class="filter-btn" data-filter="technical">Technical Experts</button>
+      <button class="filter-btn" data-filter="top-rated">Top Rated</button>
+      <button class="filter-btn" data-filter="random">Random Guide</button>
+    </nav>
+
+    <section class="guide-list">
+
+      Pemba Sherpa -->
+      <!-- <div
+        class="guide"
+        data-name="Pemba Sherpa"
+        data-category="senior"
+        data-region="Everest"
+        data-languages="English,Nepali,Tibetan"
+        data-specialties="Everest Region,High Altitude,Ice Climbing,Rescue Operations"
+        data-reviews="347"
+        data-treks="567"
+        data-skills="8"
+        data-price="150"
+        data-availability="Year-round"
+        data-rating="9.5"
+      >
+        <img src="https://via.placeholder.com/200?text=Pemba" alt="Pemba Sherpa" />
+        <h2>Pemba Sherpa</h2>
+        <p class="title">Senior Mountain Guide & Expedition Leader</p>
+        <ul class="stats">
+          <li>⭐ 347 Reviews</li>
+          <li>🥾 567 Treks</li>
+          <li>🗣️ 4 Languages</li>
+          <li>🔧 8 Skills</li>
+          <li>💲 From $150/day</li>
+          <li>📅 Year-round</li>
+        </ul>
+        <p class="specialties"><strong>Specialties:</strong> Everest Region, High Altitude, Ice Climbing, Rescue Operations</p>
+      </div>
+
+     Ang Dorje Lama 
+      <div
+        class="guide"
+        data-name="Ang Dorje Lama"
+        data-category="cultural"
+        data-region="Annapurna"
+        data-languages="English,Nepali,Hindi"
+        data-specialties="Cultural Immersion,Photography,Trekking History,Local Festivals"
+        data-reviews="289"
+        data-treks="423"
+        data-skills="6"
+        data-price="120"
+        data-availability="Mar–Nov"
+        data-rating="9.0"
+      >
+        <img src="https://via.placeholder.com/200?text=Ang" alt="Ang Dorje Lama" />
+        <h2>Ang Dorje Lama</h2>
+        <p class="title">Cultural Heritage Specialist & Photographer</p>
+        <ul class="stats">
+          <li>⭐ 289 Reviews</li>
+          <li>🥾 423 Treks</li>
+          <li>🗣️ 4 Languages</li>
+          <li>🔧 6 Skills</li>
+          <li>💲 From $120/day</li>
+          <li>📅 Mar–Nov</li>
+        </ul>
+        <p class="specialties"><strong>Specialties:</strong> Annapurna Region, Cultural Immersion, Photography, Local Festivals</p>
+      </div>
+
+    Tenzin Norbu 
+      <div
+        class="guide"
+        data-name="Tenzin Norbu"
+        data-category="technical"
+        data-region="Kanchenjunga"
+        data-languages="English,Nepali,German"
+        data-specialties="Remote Regions,Off-trail Adventures,Technical Climbing,Safety Protocols"
+        data-reviews="198"
+        data-treks="334"
+        data-skills="7"
+        data-price="140"
+        data-availability="Apr–Oct"
+        data-rating="8.8"
+      >
+        <img src="https://via.placeholder.com/200?text=Tenzin" alt="Tenzin Norbu" />
+        <h2>Tenzin Norbu</h2>
+        <p class="title">Adventure Specialist & Technical Climbing Guide</p>
+        <ul class="stats">
+          <li>⭐ 198 Reviews</li>
+          <li>🥾 334 Treks</li>
+          <li>🗣️ 4 Languages</li>
+          <li>🔧 7 Skills</li>
+          <li>💲 From $140/day</li>
+          <li>📅 Apr–Oct</li>
+        </ul>
+        <p class="specialties"><strong>Specialties:</strong> Remote Regions, Off-trail Adventures, Technical Climbing, Safety Protocols</p>
+      </div> -->
+
+      <!-- Rajiv Thapa -->
+      <!-- <div
+        class="guide"
+        data-name="Rajiv Thapa"
+        data-category="technical"
+        data-region="Everest Base Camp"
+        data-languages="English,Nepali"
+        data-specialties="Glacier Travel,Icefall Crossing,High-Altitude Rescue"
+        data-reviews="152"
+        data-treks="280"
+        data-skills="5"
+        data-price="130"
+        data-availability="Apr–Nov"
+        data-rating="8.9"
+      >
+        <img src="https://via.placeholder.com/200?text=Rajiv" alt="Rajiv Thapa" />
+        <h2>Rajiv Thapa</h2>
+        <p class="title">Technical Expert</p>
+        <ul class="stats">
+          <li>⭐ 152 Reviews</li>
+          <li>🥾 280 Treks</li>
+          <li>🗣️ 2 Languages</li>
+          <li>🔧 5 Skills</li>
+          <li>💲 From $130/day</li>
+          <li>📅 Apr–Nov</li>
+        </ul>
+        <p class="specialties"><strong>Specialties:</strong> Glacier Travel, Icefall Crossing, High-Altitude Rescue</p>
+      </div>
+
+       Maya Gurung 
+      <div
+        class="guide"
+        data-name="Maya Gurung"
+        data-category="cultural"
+        data-region="Kathmandu Valley"
+        data-languages="English,Nepali"
+        data-specialties="City Tours,Temple History,Cuisine,Local Markets"
+        data-reviews="174"
+        data-treks="196"
+        data-skills="4"
+        data-price="100"
+        data-availability="Year-round"
+        data-rating="8.7"
+      >
+        <img src="https://via.placeholder.com/200?text=Maya" alt="Maya Gurung" />
+        <h2>Maya Gurung</h2>
+        <p class="title">Cultural Specialist</p>
+        <ul class="stats">
+          <li>⭐ 174 Reviews</li>
+          <li>🥾 196 Treks</li>
+          <li>🗣️ 2 Languages</li>
+          <li>🔧 4 Skills</li>
+          <li>💲 From $100/day</li>
+          <li>📅 Year-round</li>
+        </ul>
+        <p class="specialties"><strong>Specialties:</strong> City Tours, Temple History, Cuisine, Local Markets</p>
+      </div>
+
+    </section> -->
+ 
+    <section class="guide-directory">
+    <h1>Meet Our Guides</h1>
+
+    <div class="toolbar">
+      <input type="text" id="searchBox" placeholder="Search by name or keyword…">
+      <div class="filters">
+        <button class="filter active" data-category="all">All</button>
+        <button class="filter" data-category="senior">Senior</button>
+        <button class="filter" data-category="female">Female</button>
+        <button class="filter" data-category="cultural">Cultural</button>
+        <button class="filter" data-category="technical">Technical</button>
+        <button class="filter" data-category="eco">Eco-Tourism</button>
+        <button class="filter" data-category="climbing">Climbing</button>
+      </div>
+    </div>
+
+    <div class="guide-grid" id="guideGrid">
+
+      <!-- Pemba Sherpa -->
+      <div class="guide-card" data-category="senior"
+           data-keywords="pemba sherpa senior expedition everest annapurna english nepali sherpa">
+        <img src="pemba.jpeg" alt="Pemba Sherpa">
+        <h2>Pemba Sherpa</h2>
+        <p class="role">Senior Mountain Guide & Expedition Leader</p>
+        <ul>
+          <li>🗓️ 18 years experience</li>
+          <li>🥾 567 treks guided</li>
+          <li>⭐ 4.9 rating</li>
+          <li>🌍 Everest Region, Annapurna</li>
+          <li>🗣️ English, Nepali, Sherpa</li>
+        </ul>
+        <p class="testimonial">"Pemba's guidance made my Everest trek unforgettable and safe."</p>
+        <p class="rate">$150/day</p>
+        <div class="button-group">
+          <button class="view-profile">View Profile</button>
+          <a href="tel:+977980000001" class="call-btn">Call</a>
+        </div>
+      </div>
+ 
+
+      <!-- Ang Dorje Lama -->
+      <div class="guide-card" data-category="cultural"
+           data-keywords="ang dorje lama cultural heritage photography english nepali">
+        <img src="angdorje.jpeg" alt="Ang Dorje Lama">
+        <h2>Ang Dorje Lama</h2>
+        <p class="role">Cultural Heritage Specialist & Photography Guide</p>
+        <ul>
+          <li>🗓️ 15 years experience</li>
+          <li>🥾 423 treks guided</li>
+          <li>⭐ 4.8 rating</li>
+          <li>🌍 Kathmandu Valley, Mustang</li>
+          <li>🗣️ English, Nepali</li>
+        </ul>
+        <p class="testimonial">"Ang's insights into local culture enriched every step of my trek."</p>
+        <p class="rate">$140/day</p>
+        <div class="button-group">
+          <button class="view-profile">View Profile</button>
+          <a href="tel:+977980000002" class="call-btn">Call</a>
+        </div>
+      </div>
+
+      <!-- Tenzin Norbu -->
+      <div class="guide-card" data-category="technical"
+           data-keywords="tenzin norbu technical climbing adventure english nepali">
+        <img src="tenzin.jpeg" alt="Tenzin Norbu">
+        <h2>Tenzin Norbu</h2>
+        <p class="role">Technical Climbing Guide & Adventure Specialist</p>
+        <ul>
+          <li>🗓️ 12 years experience</li>
+          <li>🥾 334 treks guided</li>
+          <li>⭐ 4.9 rating</li>
+          <li>🌍 Annapurna, Manaslu</li>
+          <li>🗣️ English, Nepali</li>
+        </ul>
+        <p class="testimonial">"Tenzin's technical expertise was key to conquering tough routes."</p>
+        <p class="rate">$155/day</p>
+        <div class="button-group">
+          <button class="view-profile">View Profile</button>
+          <a href="tel:+977980000003" class="call-btn">Call</a>
+        </div>
+      </div>
+
+      <!-- Lakpa Tamang -->
+      <div class="guide-card" data-category="eco"
+           data-keywords="lakpa tamang eco tourism conservation langtang gosaikunda english nepali tamang">
+        <img src="lakpa.jpeg" alt="Lakpa Tamang">
+        <h2>Lakpa Tamang</h2>
+        <p class="role">Eco-Tourism Guide & Conservation Specialist</p>
+        <ul>
+          <li>🗓️ 11 years experience</li>
+          <li>🥾 165 reviews</li>
+          <li>⭐ 4.7 rating</li>
+          <li>🌍 Langtang Nat’l Park, Gosaikunda</li>
+          <li>🗣️ English, Nepali, Tamang</li>
+        </ul>
+        <p class="testimonial">"Lakpa’s knowledge of flora and fauna opened my eyes to mountain ecosystems."</p>
+        <p class="rate">$110/day</p>
+        <div class="button-group">
+          <button class="view-profile">View Profile</button>
+          <a href="tel:+977980000004" class="call-btn">Call</a>
+        </div>
+      </div>
+
+      <!-- Dawa Yangchen Sherpa -->
+      <div class="guide-card" data-category="female"
+           data-keywords="dawa yangchen sherpa female women family english nepali sherpa">
+        <img src="dawa.jpeg" alt="Dawa Yangchen Sherpa">
+        <h2>Dawa Yangchen Sherpa</h2>
+        <p class="role">Women's Trek Specialist & Family-Friendly Guide</p>
+        <ul>
+          <li>🗓️ 9 years experience</li>
+          <li>🥾 143 reviews</li>
+          <li>⭐ 4.8 rating</li>
+          <li>🌍 Everest, Annapurna</li>
+          <li>🗣️ English, Nepali, Sherpa</li>
+        </ul>
+        <p class="testimonial">"Dawa made me feel capable on mountains I never dreamed of climbing."</p>
+        <p class="rate">$130/day</p>
+        <div class="button-group">
+          <button class="view-profile">View Profile</button>
+          <a href="tel:+977980000005" class="call-btn">Call</a>
+        </div>
+      </div>
+
+      <!-- Nima Gyalzen -->
+      <div class="guide-card" data-category="climbing"
+           data-keywords="nima gyalzen climbing peak specialist mera island english nepali tibetan">
+        <img src="nima.jpeg" alt="Nima Gyalzen">
+        <h2>Nima Gyalzen</h2>
+        <p class="role">High-Altitude Specialist & Peak Climbing Guide</p>
+        <ul>
+          <li>🗓️ 16 years experience</li>
+          <li>🥾 256 reviews</li>
+          <li>⭐ 4.9 rating</li>
+          <li>🌍 Mera Peak, Island Peak</li>
+          <li>🗣️ English, Nepali, Tibetan</li>
+        </ul>
+        <p class="testimonial">"Nima’s expertise helped me summit my first 6,000m peak safely."</p>
+        <p class="rate">$160/day</p>
+        <div class="button-group">
+          <button class="view-profile">View Profile</button>
+          <a href="tel:+977980000006" class="call-btn">Call</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section>
+  <div class="container">
+    <div class="title">Why Choose Our Guides</div>
+    <div class="subtitle">
+      Our guides are more than just mountain experts 
+      — they're cultural ambassadors, safety professionals, 
+      and your companions on the journey of a lifetime.
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-title">Safety First</div>
+        <div class="feature-description">
+          All our guides are certified in wilderness first aid and high-altitude rescue techniques.
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🌐</div>
+        <div class="feature-title">Cultural Knowledge</div>
+        <div class="feature-description">
+          Deep understanding of local customs, traditions, and sacred sites enhances your experience.
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🗣️</div>
+        <div class="feature-title">Communication</div>
+        <div class="feature-description">
+          Fluent in multiple languages to ensure clear communication throughout your trek.
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🏔️</div>
+        <div class="feature-title">Experience</div>
+        <div class="feature-description">
+          Years of mountain experience with hundreds of successful treks and expeditions.
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+     <section class="banner">
+    <h1>Ready to Start Your Adventure?</h1>
+    <p>
+      Our expert guides are on standby. Drop us a line or ping on WhatsApp to get rolling!
+    </p>
+    <div class="btn-group">
+      <!-- Opens default mail client -->
+      <a
+        href="mailto:bookings@trekhubnepal.com?subject=Trek%20Guide%20Booking&body=Hi%20Team%2C%0A%0AI'd%20like%20to%20book%20a%20guide%20for%20..."
+        class="btn btn-email"
+      >
+        Email Us
+      </a>
+      <!-- Opens WhatsApp chat -->
+      <a
+        href="https://wa.me/9779841234567?text=Hello%20Trek%20Hub%20Nepal%2C%20I%27d%20like%20to%20book%20an%20adventure!"
+        class="btn btn-whatsapp"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp Us
+      </a>
+    </div>
+    <div class="footer-info">
+      Available 24/7 for emergencies • Licensed & Insured • 100% Satisfaction Guaranteed
+    </div>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2>Trek Hub Nepal</h2>
+        <p>Your trusted partner for authentic Himalayan adventures.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Trek Packages</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-treks">
+        <h3>Popular Treks</h3>
+        <ul>
+          <li><a href="#">Everest Base Camp</a></li>
+          <li><a href="#">Annapurna Circuit</a></li>
+          <li><a href="#">Langtang Valley</a></li>
+          <li><a href="#">Manaslu Circuit</a></li>
+          <li><a href="#">Gokyo Lakes</a></li>
+          <li><a href="#">Upper Mustang</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Info</h3>
+        <p>Thamel, Kathmandu<br>Nepal 44600</p>
+        <p>Phone: +977-1-4411234</p>
+        <p>Email: info@trekhubnepal.com</p>
+      </div>
+    </div>
+
+    <div class="footer-updates">
+      <h3>Stay Updated</h3>
+      <p>Subscribe to our newsletter for trekking tips and special offers.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Your Email" id="update-email" />
+        <button onclick="subscribeUpdate()">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Trek Hub Nepal — All rights reserved</p>
+    </div>
+  </footer>
+  <script src="scriptg.js"></script>
+  <script src="scriptn.js"></script>
+</body>
+</html>

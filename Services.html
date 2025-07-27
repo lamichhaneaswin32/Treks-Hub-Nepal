@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styleservice.css">
+    <link rel="stylesheet" href="stylen.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="stylef.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV+Db+qjC+L9KIK/7cF0HdQ3YodhDOzNV+9jkNRX2ZP95QC+ZpY+/VkBI6wt/E+ujlsJ2WTJkXsdZsc0jBoi0A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+    
+  <!-- <iframe id="navbar" src="nav.html" style="width:100%; border:none;"></iframe> -->
+     <header>
+    <div class="logo-section">
+      <a href="main.html"><img src="logo.png" alt="Logo" /></a>
+     <!-- <a href="main.html">Trek Hub Nepal</a> -->
+    </div>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="Services.html" class="active">Services</a>
+      <a href="Destinations.html">Destinations</a>
+      <a href="Equipment.html">Equipment</a>
+      <a href="Guides.html">Guides</a>
+      <!-- <a href="#">Reviews</a> -->
+    </nav>
+  <a href="loginform.html"><button class="book-btn">Login/Signup</button></a>
+     <div class="overlay" id="overlay" onclick="closeForm()"></div>
+
+  <div class="popup" id="popupForm">
+    <span class="close-btn" onclick="closeForm()">×</span>
+    <h2>Book Your Adventure</h2>
+    <form id="bookingForm">
+      <label>Full Name *</label>
+      <input type="text" name="fullName" required />
+
+      <label>Email Address *</label>
+      <input type="email" name="email" required />
+
+      <label>Phone Number *</label>
+      <input type="tel" name="phone" required />
+
+      <label>Trek Package *</label>
+      <select name="package" required>
+        <option value="">--Select a trek--</option>
+        <option value="everest">Everest Base Camp</option>
+        <option value="annapurna">Annapurna Circuit</option>
+      </select>
+
+      <label>Preferred Start Date *</label>
+      <input type="date" name="date" required />
+
+      <label>Group Size *</label>
+      <select name="groupSize" required>
+        <option>1</option>
+        <option>2</option>
+        <option>3–5</option>
+        <option>6+</option>
+      </select>
+
+      <label>Trekking Experience</label>
+      <select name="experience">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="expert">Expert</option>
+      </select>
+
+      <label>Special Requests</label>
+      <textarea name="requests" placeholder="Dietary preferences, medical needs, etc."></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </header>
+   <section class="hero">
+    <div class="content">
+      <h1>
+        <span>Extraordinary</span><br />
+        Adventures Await
+      </h1>
+      <p>
+        Transform your life with our comprehensive trekking services. From expert
+        guidance to premium gear, we craft unforgettable Himalayan experiences
+        tailored just for you.
+      </p>
+      <div class="buttons">
+        <a href="tel:+123456789" class="btn">
+          <i class="fas fa-phone-alt"></i> Call Us Now
+        </a>
+        <a href="mailto:info@trekking.com" class="btn">
+          <i class="fas fa-envelope"></i> Email Quote
+        </a>
+        <button id="liveChatBtn" class="btn">
+          <i class="fas fa-comments"></i> Live Chat
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Chat Modal -->
+  <div id="chatModal" class="chat-modal">
+    <div class="chat-header">
+      <h2>Live Chat</h2>
+      <button id="chatCloseBtn">&times;</button>
+    </div>
+    <div id="chatBody" class="chat-body"></div>
+    <div class="chat-input">
+      <input id="chatInput" type="text" placeholder="Type your message…" />
+      <button id="chatSendBtn" style="width:60px; height:50px;">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+  <section class="metrics-section">
+  <div class="metrics-container">
+    <div class="metric">
+      <div class="icon icon-purple">
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="number" data-target="2500">0</div>
+      <p>Happy Adventurers</p>
+    </div>
+    <div class="metric">
+      <div class="icon icon-green">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div class="number" data-target="50">0</div>
+      <p>Epic Routes</p>
+    </div>
+    <div class="metric">
+      <div class="icon icon-orange">
+        <i class="fas fa-clock"></i>
+      </div>
+      <div class="number" data-target="15">0</div>
+      <p>Years of Excellence</p>
+    </div>
+    <div class="metric">
+      <div class="icon icon-yellow">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="number" data-target="4.9">0</div>
+      <p>Perfect Rating</p>
+    </div>
+  </div>
+</section>
+  <section class="hero">
+    <h1>Choose Your Perfect Adventure</h1>
+    <p>Each service is crafted with passion, expertise, and an unwavering commitment to your safety and satisfaction.</p>
+  </section>
+
+  <!-- Filter Buttons -->
+  <section class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="guided-treks">
+      <i class="fas fa-hiking"></i> Guided Treks
+    </button>
+    <button class="filter-btn" data-filter="equipment-rental">
+      <i class="fas fa-suitcase-rolling"></i> Equipment Rental
+    </button>
+    <button class="filter-btn" data-filter="photo-expeditions">
+      <i class="fas fa-camera-retro"></i> Photo Expeditions
+    </button>
+    <button class="filter-btn" data-filter="gourmet-meals">
+      <i class="fas fa-utensils"></i> Gourmet Meals
+    </button>
+    <button class="filter-btn" data-filter="wellness-retreats">
+      <i class="fas fa-spa"></i> Wellness Retreats
+    </button>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services-grid">
+    <div class="service-card" data-service="guided-treks">
+      <i class="fas fa-hiking card-icon"></i>
+      <h3>Expert Guided Treks</h3>
+    </div>
+
+    <div class="service-card" data-service="equipment-rental">
+      <i class="fas fa-suitcase-rolling card-icon"></i>
+      <h3>Premium Equipment Rental</h3>
+    </div>
+
+    <div class="service-card" data-service="photo-expeditions">
+      <i class="fas fa-camera-retro card-icon"></i>
+      <h3>Photography Expeditions</h3>
+    </div>
+
+    <div class="service-card" data-service="gourmet-meals">
+      <i class="fas fa-utensils card-icon"></i>
+      <h3>Gourmet Meal Experiences</h3>
+    </div>
+
+    <div class="service-card" data-service="wellness-retreats">
+      <i class="fas fa-spa card-icon"></i>
+      <h3>Himalayan Wellness Retreats</h3>
+    </div>
+  </section>
+
+  <!-- Dynamic Slider & Testimonial -->
+  <section class="slider-section">
+    <div class="slider">
+      <div class="slides"></div>
+      <div class="dots"></div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars"></div>
+      <p class="quote"></p>
+      <p class="author"></p>
+      <div class="buttons"></div>
+    </div>
+  </section>
+
+
+ <!-- <section class="services">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p>Complete trekking solutions for your Himalayan adventure</p>
+      <div class="stats">
+        <div class="stat">
+          <div class="icon"><img src="happy-icon.png" alt="Happy Trekkers"/></div>
+          <h2>500+</h2>
+          <p>Happy Trekkers</p>
+        </div>
+        <div class="stat">
+          <div class="icon"><img src="routes-icon.png" alt="Trek Routes"/></div>
+          <h2>15+</h2>
+          <p>Trek Routes</p>
+        </div>
+        <div class="stat">
+          <div class="icon"><img src="experience-icon.png" alt="Years of Experience"/></div>
+          <h2>10</h2>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat">
+          <div class="icon"><img src="rating-icon.png" alt="Average Rating"/></div>
+          <h2>4.9</h2>
+          <p>Average Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  Tabbed Services -->
+  <section class="service-tabs">
+    <div class="tabs">
+      <button class="tab active" data-tab="guided">Guided Treks</button>
+      <button class="tab" data-tab="equipment">Equipment Rental</button>
+      <button class="tab" data-tab="photography">Photography Tours</button>
+      <button class="tab" data-tab="meals">Meal Packages</button>
+    </div>
+
+    <div class="tab-content active" id="guided">
+      <h2>Guided Treks</h2>
+      <p><strong>From $899</strong></p>
+      <ul>
+        <li>Expert-led trekking adventures with local guides</li>
+        <li>Professional guides</li>
+        <li>Safety equipment</li>
+        <li>Route planning</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="equipment">
+      <h2>Equipment Rental</h2>
+      <p><strong>From $99</strong></p>
+      <ul>
+        <li>High-quality tents and gear</li>
+        <li>Clothing and safety gear</li>
+        <li>Affordable daily packages</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="photography">
+      <h2>Photography Tours</h2>
+      <p><strong>From $499</strong></p>
+      <ul>
+        <li>Stunning landscapes and sunrise hikes</li>
+        <li>Professional photography tips</li>
+        <li>Tailored routes for golden hour</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="meals">
+      <h2>Meal Packages</h2>
+      <p><strong>From $129</strong></p>
+      <ul>
+        <li>Nutrient-packed trekking meals</li>
+        <li>Veg & non-veg options</li>
+        <li>Daily meal plans</li>
+      </ul>
+    </div>
+  </section> 
+
+  <!-- Feature Highlight -->
+  <section class="features">
+    <div class="container">
+      <h2>Why Choose Us</h2>
+      <ul class="features-list">
+        <li>🌏 Cultural insights</li>
+        <li>🏕️ Local expert guides</li>
+        <li>🧗 Customized trekking packages</li>
+        <li>🧰 All-inclusive logistics</li>
+      </ul>
+      <button class="book-btn">Book This Service</button>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="cta-container">
+      <h2>Ready for Your Adventure?</h2>
+      <p>Contact us to customize your perfect trekking experience.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn cta-contact">Contact Us</a>
+        <a href="#packages" class="btn cta-view">View Packages</a>
+      </div>
+    </div>
+  </section>
+ 
+<footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2>Trek Hub Nepal</h2>
+        <p>Your trusted partner for authentic Himalayan adventures.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Trek Packages</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-treks">
+        <h3>Popular Treks</h3>
+        <ul>
+          <li><a href="#">Everest Base Camp</a></li>
+          <li><a href="#">Annapurna Circuit</a></li>
+          <li><a href="#">Langtang Valley</a></li>
+          <li><a href="#">Manaslu Circuit</a></li>
+          <li><a href="#">Gokyo Lakes</a></li>
+          <li><a href="#">Upper Mustang</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Info</h3>
+        <p>Thamel, Kathmandu<br>Nepal 44600</p>
+        <p>Phone: +977-1-4411234</p>
+        <p>Email: info@trekhubnepal.com</p>
+      </div>
+    </div>
+
+    <div class="footer-updates">
+      <h3>Stay Updated</h3>
+      <p>Subscribe to our newsletter for trekking tips and special offers.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Your Email" id="update-email" />
+        <button onclick="subscribeUpdate()">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Trek Hub Nepal — All rights reserved</p>
+    </div>
+  </footer>
+<script src="styleservice.js"></script>
+</body>
+
+</html>
